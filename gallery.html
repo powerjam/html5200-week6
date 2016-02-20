@@ -4,20 +4,63 @@
 <meta charset="UTF-8">
 <title>Gallery</title>
 
+<!-- make sure we have cross device scaling of content standard
+    so as not to get "shrunken text" on mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+<link href="css/mobile.css" type="text/css" rel="stylesheet" media="screen and (min-width:1px) and (max-width:500px)" />
 
+<link href="css/tablet.css" type="text/css" rel="stylesheet" media="screen and (min-width:501px) and (max-width:800px)" />
+
+<link href="css/large.css" type="text/css" rel="stylesheet" media="screen and (min-width:801px) and (max-width:2048px)" />
+  
+<link href="css/print.css" type="text/css" rel="stylesheet" media="print" />
 
 <!-- <script src="javascript/objects.js" type="text/javascript"> </script> -->
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"> </script>
 
- 
-
-<style>
-	
-</style>
+<!--<style>
+	/* Creating media queries in CSS... */
+    /* typically best practice due to speed (the server just has one file to download) */ 
+  @media (min-width:1px) and (max-width: 600px) {
+    body {
+      width: 50%;
+      color: red;
+      background-color: yellow;
+    }
+  }
+  
+  @media (min-width: 601px) and (max-width: 2048px) {
+    body {
+      width: 100%;
+      color: blue;
+      background-color: red;
+    }
+  }
+</style>-->
 </head>
+  
+  
 <body> 
-<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"> </script> -->
-	
+  
+<script>
+  $("document").ready(function(){
+    //alert("hello world from jQuery");
+    //$("img").css("border", "3px solid green"); //all images
+    //$("img:gt(2)").css("border", "3px solid green"); //filter of greater than 2nd index numbering position
+    $("li").css("border", "3px solid green");
+    $("li a").css("background-color", "red");
+    $("img:nth-child(2n)").css("border", "2px solid blue"); //every 2nd
+    $("img").addClass("error");
+    $("img").fadeOut(2000);
+    //$("img").slideUp(2000);
+    //$("img").slideDown(2000);
+  });
+</script>
+
 <header>
 	<h1>Gallery</h1> 
 	</header>

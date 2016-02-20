@@ -192,7 +192,8 @@ label{
 }
 
 .error{
-    color: red;   
+    padding: 20px;
+    background-color: red;
 }
 
 .thumbs_block{
